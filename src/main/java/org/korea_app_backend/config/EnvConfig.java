@@ -1,23 +1,22 @@
 package org.korea_app_backend.config;
 
-import io.github.cdimascio.dotenv.Dotenv;
-import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Configuration;
 
-@Component
+@Configuration
 public class EnvConfig {
 
-    private final Dotenv dotenv;
+    @Value("${jwt.secret}")
+    private String jwtSecret;
 
-    public EnvConfig() {
-        // Load file .env nằm ở root project
-        dotenv = Dotenv.load();
-    }
+    @Value("${jwt.expiration}")
+    private String jwtExpiration;
 
     public String getJwtSecret() {
-        return dotenv.get("JWT_SECRET");
+        return jwtSecret;
     }
 
     public String getJwtExpiration() {
-        return dotenv.get("JWT_EXPIRATION");
+        return jwtExpiration;
     }
 }
