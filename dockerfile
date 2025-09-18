@@ -1,10 +1,10 @@
-# Sử dụng Maven để build
-FROM maven:3.9.6-eclipse-temurin-17 AS build
+# Build với Maven + JDK 21
+FROM maven:3.9.6-eclipse-temurin-21 AS build
 WORKDIR /app
 COPY . .
 RUN mvn clean package -DskipTests
 
-# Image chạy app
+# Image chạy app với JDK 21
 FROM eclipse-temurin:21-jdk
 WORKDIR /app
 COPY --from=build /app/target/*.jar app.jar
