@@ -40,6 +40,7 @@ public class SecurityConfig {
         http.csrf(AbstractHttpConfigurer::disable)
                 .cors(cors -> cors.configurationSource(corsConfigurationSource())) // ✅ bật cors
                 .authorizeHttpRequests(auth -> auth
+                
                         .requestMatchers("/api/auth/**").permitAll()
                         .requestMatchers("api/bieumau/*/qr").permitAll() // cho phép /bieumau/{id}/qr
                         .requestMatchers("api/bieumau/view/**").permitAll() // cho phép /bieumau/view/{maQR}
@@ -56,7 +57,7 @@ public class SecurityConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(List.of("http://localhost:5173")); // FE Vite
+        configuration.setAllowedOrigins(List.of("https://korea-app-fe.onrender.com"));
         configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(List.of("*"));
         configuration.setAllowCredentials(true); // cho phép gửi cookie/token
