@@ -53,6 +53,9 @@ public class BieuMauController {
                 .ngayXacNhan(bm.getNgayXacNhan())
                 .ngayTao(bm.getNgayTao())
                 .ngayHen(bm.getNgayHen())
+                .maICD(bm.getMaICD())
+                .ghiChu(bm.getGhiChu())
+                .maSV(bm.getMaSV())
                 .build();
 
         BieuMauModel saved = bieuMauService.create(bieuMau);
@@ -85,7 +88,9 @@ public class BieuMauController {
                 .ngaybieumau(bm.getNgaybieumau())
                 .ngayTao(bm.getNgayTao())
                 .ngayXacNhan(bm.getNgayXacNhan())
-
+                .maICD(bm.getMaICD())
+                .ghiChu(bm.getGhiChu())
+                .maSV(bm.getMaSV())
                 .thu(bm.getThu())
                 .build();
 
@@ -110,7 +115,7 @@ public class BieuMauController {
                             .orElseThrow(() -> new RuntimeException("Không tìm thấy biểu mẫu"));
 
             // link bạn muốn nhúng vào QR
-            String qrContent = "https://korea-app-fe.onrender.com/member/" + bm.getId();
+            String qrContent = "https://korea-app.vercel.app/member/" + bm.getId();
 
             byte[] qrImage = qrCodeService.generateQRCode(qrContent, 360, 360);
 

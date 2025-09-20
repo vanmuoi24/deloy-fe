@@ -6,6 +6,9 @@ import lombok.*;
 
 import java.time.LocalDate;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 @Entity
 @Table(name = "BieuMau")
 @Getter
@@ -63,7 +66,17 @@ public class BieuMauModel {
     @JsonFormat(pattern = "dd-MM-yyyy")
     private LocalDate ngaybieumau;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "khung_gio_id", referencedColumnName = "id", nullable = false)
+    @Column(nullable = false)
+    private String maICD;
+
+    @Column(nullable = false)
+    private String ghiChu;
+
+    @Column(nullable = false)
+    private String maSV;
+
+    @ManyToOne
+    @JoinColumn(name = "khung_gio_id", foreignKey = @ForeignKey(name = "FK_bieumau_khunggio"))
+    @OnDelete(action = OnDeleteAction.CASCADE) // hoặc SET_NULL
     private KhungGioModel khungGio;
 }

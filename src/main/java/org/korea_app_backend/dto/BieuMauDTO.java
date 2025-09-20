@@ -67,4 +67,13 @@ public class BieuMauDTO {
     @JsonFormat(pattern = "dd-MM-yyyy")
     @DateTimeFormat(pattern = "dd-MM-yyyy")
     private LocalDate ngayTao;
+
+    @NotBlank(message = "This field is required")
+    private String maICD;
+
+    @NotBlank(message = "This field is required")
+    private String ghiChu;
+
+    @NotBlank(message = "This field is required")
+    private String maSV;
 }

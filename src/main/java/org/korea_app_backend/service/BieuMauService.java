@@ -47,6 +47,9 @@ public class BieuMauService {
          bieuMau.setNgaybieumau(bieuMauDetail.getNgaybieumau());
          bieuMau.setNgayTao(bieuMauDetail.getNgayTao());
          bieuMau.setNgayXacNhan(bieuMauDetail.getNgayXacNhan());
+         bieuMau.setMaICD(bieuMauDetail.getMaICD());
+         bieuMau.setGhiChu(bieuMauDetail.getGhiChu());
+         bieuMau.setMaSV(bieuMauDetail.getMaSV());
         return repo.save(bieuMau);
     }
 
