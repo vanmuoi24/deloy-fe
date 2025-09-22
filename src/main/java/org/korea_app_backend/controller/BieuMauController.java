@@ -56,6 +56,7 @@ public class BieuMauController {
                 .maICD(bm.getMaICD())
                 .ghiChu(bm.getGhiChu())
                 .maSV(bm.getMaSV())
+                .thangDiem(bm.getThangDiem())
                 .build();
 
         BieuMauModel saved = bieuMauService.create(bieuMau);
