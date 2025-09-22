@@ -115,7 +115,7 @@ public class BieuMauController {
                             .orElseThrow(() -> new RuntimeException("Không tìm thấy biểu mẫu"));
 
             // link bạn muốn nhúng vào QR
-            String qrContent = "https://korea-app.vercel.app/member/" + bm.getId();
+            String qrContent = "https://korea-app-fe.onrender.com/member/" + bm.getId();
 
             byte[] qrImage = qrCodeService.generateQRCode(qrContent, 360, 360);
 
