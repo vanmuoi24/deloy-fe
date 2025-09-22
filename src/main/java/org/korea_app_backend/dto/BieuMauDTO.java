@@ -70,6 +70,8 @@ public class BieuMauDTO {
 
     @NotBlank(message = "This field is required")
     private String maICD;
+    @NotBlank(message = "This field is required")
+    private String thangDiem;
 
     @NotBlank(message = "This field is required")
     private String ghiChu;

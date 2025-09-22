@@ -91,6 +91,7 @@ public class BieuMauController {
                 .maICD(bm.getMaICD())
                 .ghiChu(bm.getGhiChu())
                 .maSV(bm.getMaSV())
+                .thangDiem(bm.getThangDiem())
                 .thu(bm.getThu())
                 .build();
 

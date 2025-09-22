@@ -40,7 +40,8 @@ public class BieuMauModel {
 
     @Column(nullable = false)
     private String donViCapBang;
-
+    @Column(nullable = false)
+    private String thangDiem;
     @Column(nullable = false)
     private String nganhDaotao;
 

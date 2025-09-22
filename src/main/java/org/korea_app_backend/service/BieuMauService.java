@@ -50,6 +50,7 @@ public class BieuMauService {
          bieuMau.setMaICD(bieuMauDetail.getMaICD());
          bieuMau.setGhiChu(bieuMauDetail.getGhiChu());
          bieuMau.setMaSV(bieuMauDetail.getMaSV());
+         bieuMau.setThangDiem(bieuMauDetail.getThangDiem());
         return repo.save(bieuMau);
     }
 
